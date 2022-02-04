@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./App.css";
+import Profile from "./components/profile";
+import Elements from "./components/Elements";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Card className="card-color mt-5">
+        <Card.Header>Конструктор окрасов</Card.Header>
+        <Card.Body>
+          <Row>
+            <Col sm={3}>
+              <Profile />
+            </Col>
+            <Col>
+              <Elements />
+            </Col>
+          </Row>
+          <Button variant="primary m-2">Сохранить</Button>
+          <Button variant="secondary m-2">Сбросить</Button>
+        </Card.Body>
+      </Card>
+    </Container>
   );
 }
 
